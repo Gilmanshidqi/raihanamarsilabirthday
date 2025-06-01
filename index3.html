@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Selamat Ulang Tahun Raihana Marsila</title>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/4f3ce16e3e.js" crossorigin="anonymous"></script>
+  <style>
+    :root {
+      --primary: #a33858;
+      --secondary: #ffdde1;
+      --bg-gradient: linear-gradient(to bottom right, var(--secondary), #ee9ca7);
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    html, body {
+      scroll-behavior: smooth;
+      background: var(--bg-gradient);
+      overflow-x: hidden;
+    }
+    section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 80px 20px 40px;
+      flex-direction: column;
+      position: relative;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.97);
+      border-radius: 24px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      max-width: 420px;
+      width: 100%;
+      padding: 32px 24px;
+      text-align: center;
+      z-index: 1;
+    }
+    h1, h2 {
+      color: var(--primary);
+    }
+    h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 28px;
+      margin-bottom: 20px;
+    }
+    .message {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.8;
+      color: #444;
+      margin-bottom: 30px;
+    }
+    .message strong {
+      color: var(--primary);
+    }
+    .btn-start, .see-more {
+      display: inline-block;
+      padding: 12px 28px;
+      font-size: 16px;
+      font-weight: 600;
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    .btn-start:hover, .see-more:hover {
+      background-color: #892947;
+    }
+    .avatar {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #fff;
+      margin: -45px auto 20px;
+      background: #fff;
+    }
+    .card-content {
+      text-align: center;
+    }
+    .btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin: 20px 0;
+      flex-wrap: wrap;
+    }
+    .btn-outline, .btn-filled {
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .btn-outline {
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      background: white;
+    }
+    .btn-outline:hover {
+      background: var(--primary);
+      color: white;
+    }
+    .btn-filled {
+      background: var(--primary);
+      color: white;
+      border: 2px solid transparent;
+    }
+    .btn-filled:hover {
+      background: #832f47;
+    }
+    .stats {
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid #f6c6d6;
+      border-bottom: 1px solid #f6c6d6;
+      padding: 12px 0;
+      margin-bottom: 16px;
+    }
+    .stats div {
+      text-align: center;
+    }
+    .stats strong {
+      color: var(--primary);
+    }
+    .love {
+      position: fixed;
+      font-size: 24px;
+      animation: fall linear infinite;
+      pointer-events: none;
+      user-select: none;
+      z-index: 0;
+    }
+    @keyframes fall {
+      0% { transform: translateY(-10vh) rotate(0); opacity: 0; }
+      20% { opacity: 1; }
+      100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
+    }
+    .footer {
+      text-align: center;
+      padding: 30px 20px;
+      background: rgba(255, 255, 255, 0.85);
+      color: var(--primary);
+      font-weight: 600;
+      font-size: 15px;
+      border-top: 2px solid var(--primary);
+      border-radius: 12px 12px 0 0;
+    }
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: rgba(255, 255, 255, 0.95);
+      padding: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      z-index: 10;
+      flex-wrap: wrap;
+    }
+    nav button {
+      background: white;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      padding: 8px 16px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    nav button:hover {
+      background: var(--primary);
+      color: white;
+    }
+    @media (max-width: 480px) {
+      .card {
+        padding: 24px 16px;
+        max-width: 100%;
+      }
+      .btn-group {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <audio id="bg-music" autoplay loop>
+    <source src="Romantic Happy Birthday (Arranged by Miranda Wong) Piano Cover-yt.savetube.me.mp3" type="audio/mpeg">
+  </audio>
+
+  <nav>
+    <button onclick="scrollToSection('home')">Beranda</button>
+    <button onclick="scrollToSection('profile')">Profil</button>
+    <button onclick="scrollToSection('lanjutan')">Pesan Cinta</button>
+  </nav>
+
+  <section id="home">
+    <div class="card">
+      <h1>Selamat Ulang Tahun<br>Raihana Marsila</h1>
+      <div class="message">
+        <strong>Ya Allah</strong>, panjangkan umur Raihana, limpahkan kesehatan, rezeki, dan kebahagiaan di setiap langkah hidupnya.<br><br>
+        Terima kasih telah hadir sebagai cahaya dalam hidupku. <strong>Doaku</strong> untukmu selalu baik untuk kamu, semoga hari harimu dipenuhi cinta, tawa, dan keberkahan.<br><br>
+        Tetaplah menjadi sosok yang lembut, kuat, dan penuh kasih. Aku <strong>bangga</strong> dan <strong>bersyukur</strong> memilikimu. 💖
+      </div>
+      <a href="#profile" class="btn-start">Lanjut Klik di Sini!</a>
+    </div>
+  </section>
+
+  <section id="profile">
+    <div class="card">
+      <img src="img/TopRaihana.png" alt="Top Cover Raihana" class="cover" style="width:100%;height:200px;object-fit:cover;">
+      <div class="card-content">
+        <img src="img/Fotoraihana.png" alt="Raihana" class="avatar" />
+        <h2>Hari Ini Ulang Tahun!! 🎉</h2>
+        <p>Ucapin ulang tahun lewat tombol di bawah ini ya!</p>
+        <div class="btn-group">
+          <a href="https://wa.me/62895401301284" target="_blank" class="btn-outline">Kirim Pesan</a>
+          <a href="https://instagram.com/raihnaasila_" target="_blank" class="btn-filled">Follow Instagram</a>
+        </div>
+        <div class="stats">
+          <div><strong>563</strong><br><span>Followers</span></div>
+          <div><strong>427</strong><br><span>Following</span></div>
+          <div><strong>0</strong><br><span>Posts</span></div>
+        </div>
+        <a href="#lanjutan" class="see-more">Klik Di Sini Buat Tau Siapa Itu Raihana Marsila?!</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="lanjutan">
+    <!-- Konten lanjutan bisa ditempelkan di sini seperti about-container & pesan cinta -->
+   <!-- SECTION 1: Tentang Aku 💕 -->
+<div class="about-container">
+  <div class="about-image">
+    <img src="img/fotoraihana3.jpg" alt="Raihana Marsila" />
+  </div>
+  <div class="about-text">
+    <h2>Tentang Aku 💖</h2>
+    <p><strong>Haiii, aku Raihana Marsila 🧕✨</strong> — Lulusan tahun 2023 dari SMK Letris Indonesia 2, jurusan Akuntansi dan Keuangan Lembaga. Waktu sekolah, aku pernah magang selama 3 bulan sebagai Staf Akuntansi Pajak di CV GBT SOLUTIONS 🧾💼</p>
+    <p>Aku juga berhasil lulus uji kompetensi MYOB dan punya sertifikat TOEIC juga, lho! 🎓📜</p>
+    <p>Pengalaman kerja? Ada dong! 😎 Aku pernah jadi <strong>Kasir & Barista</strong> di Susu Mbok Darmi 🥤🍶, lalu jadi <strong>Host & Content Creator</strong> di Amerta Digital Academy 🎥✨</p>
+    <p>Dan sekarang, aku aktif sebagai <strong>Live Streaming Host</strong> di Paragon Technology and Innovation. Seruuu banget! Bisa ketemu banyak orang dan terus berkembang tiap hari 🌸📲</p>
+    <p>Aku selalu terbuka untuk pengalaman baru dan kolaborasi seru! Siapa tahu kita bisa kerja bareng? 😄🤝</p>
+    <p><strong>📞 Telepon:</strong> 0895401301284<br>
+       <strong>📧 Email:</strong> raihanamarsilaa@gmail.com<br>
+       <strong>📍 Domisili:</strong> Depok, Jawa Barat</p>
+
+    <p><strong>🎓 Pendidikan:</strong><br>
+       SMK Letris Indonesia 2 — Akuntansi & Keuangan 💰📚</p>
+
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </div>
+</div>
+
+
+<!-- SECTION 2: Preferensi Manis 💕 -->
+<div class="about-container">
+  <div class="about-text">
+    <h2>Hal-hal yang Aku Suka & Kurang Suka 😋🙈</h2>
+
+    <p><strong>🍰 Makanan Favorit:</strong> Cheesecuit Strawbery Bandung yang sangat enak, Japanase cheesecake Holand yang langka banget!, dan Seafood Depok Yang enak banget! 🍝🍰😋</p>
+
+    <p><strong>🌅 Tempat Favorit:</strong>  Setu tempat enak malam malam buat liat setu dan Gandaria City karena ada sushi yang sangat enak</p>
+
+    <p><strong>💗 Suka Diperlakukan:</strong> Diperhatiin kayak bunga yang lagi mekar 🌸, dikasih kejutan kecil (apalagi dikasih duit 😍), dan ngobrol panjang tanpa di ganggu hal lain 💬</p>
+
+    <p><strong>😣 Kurang Suka Diperlakukan:</strong> Didiemin lama-lama 😔, dibandingin, atau dibentak! Plis, hati aku lembut lho 🩷🥺</p>
+
+    <p><strong>🙅‍♀️ Sikap yang Nggak Aku Suka:</strong> Orang yang kasar, suka bohong, atau yang hobi ngeremehin orang lain. Big no no! 🚫👎</p>
+
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </div>
+  
+  <div class="about-image">
+    <img src="img/fotoraihana2.jpg" alt="Raihana Marsila" />
+  </div>
+</div>
+
+<!-- SECTION 3: PESAN CINTA -->
+<div class="about-container four-image-layout">
+  <!-- FOTO-FOTO -->
+  <div class="image-stack">
+    <img src="img/FOTORAIHANA5.jpg" alt="Raihana Marsila" />
+    <img src="img/FOTORAIHANA7.jpg" alt="Raihana Marsila" />
+    <img src="img/FOTORAIHANA8.jpg" alt="Raihana Marsila" />
+    <img src="img/FOTORAIHANA10.jpg" alt="Raihana Marsila" />
+  </div>
+
+  <!-- PESAN CINTA -->
+  <div class="about-text">
+    <h2>Untuk Sayangku, Raihana 💖</h2>
+
+    <p><strong>Dear Raihana,</strong></p>
+
+    <p>
+      Di hari spesial ini, aku ingin kamu tahu betapa bersyukurnya aku memiliki seseorang seindah dan sebaik kamu di hidupku.
+      Terima kasih telah hadir dengan segala kelembutan, tawa, dan perhatianmu yang selalu membuat hari hariku lebih bermakna.
+    </p>
+
+    <p>
+      Kalau dunia kamu sedang tidak baik-baik saja, kamu selalu punya aku untuk jadi tempat kamu pulang.
+      Aku tahu mungkin tangan kita sudah tidak saling menggenggam, bahkan langkah kita pun sudah tidak lagi sama.
+      Tapi kapan pun kamu butuh aku, aku tidak akan ragu untuk mengulurkan tanganku dan menghentikan langkahku hanya untuk sekadar membantu kamu.
+    </p>
+
+    <p>
+      Hari ini kamu genap berusia 20 tahun. Sejauh ini kamu sudah menjadi orang hebat yang pernah aku temui.
+      Selain hebat, kamu juga keren dan kuat sekali. Orang lain belum tentu bisa menjadi sepertimu, aku bangga sekali.
+    </p>
+
+    <p>
+      Dua puluh tahun adalah pintu menuju kedewasaan. Kamu harus belajar untuk bertahan.
+      Kalau dunia sedang tidak berpihak padamu, jangan marah ya, karena mungkin itu adalah bagian dari proses menuju dewasa.
+      Aku tidak tahu sebanyak apa rintangan yang akan kamu hadapi di depan sana, tapi aku berharap semoga Tuhan selalu memberi kemudahan untuk kamu melewati semuanya.
+    </p>
+
+    <p>
+      Semoga di sela sela hiruk pikuk dunia yang sering melelahkan ini, Tuhan juga memberikan kamu kesehatan dan kekuatan untuk menghadapi semuanya.
+      Setelah ini, kamu akan bertemu dengan orang-orang yang berpotensi untuk menyakiti atau mengecewakanmu.
+      Aku harap kamu selalu bisa memaafkan semuanya, karena semakin jauh langkah kita, semakin banyak pula hal yang akan kita temui dan tidak semuanya tentang bahagia, tapi juga tentang rasa sakit yang akan kamu alami.
+    </p>
+
+    <p>
+      Kalau kamu merasa semua yang hadir itu tidak adil, jangan ubah senyummu ya.
+      Percayalah, semua akan indah pada waktunya.
+    </p>
+
+    <p>
+      Hana, mungkin langkah kita berhenti sampai di sini, tapi aku tidak akan membiarkan kamu berjalan sendirian.
+      Aku akan tetap ada di belakang kamu, mengawasi kamu, agar kalau nanti ada apa-apa, kamu bisa melihat ke belakang dan tahu bahwa masih ada aku yang selalu menjaga kamu dari kejauhan.
+      Kamu tenang saja, aku tidak akan diam. Aku akan usahakan semuanya agar kita bisa bahagia dan hidup layak di kemudian hari.
+    </p>
+
+    <p>
+      <strong>Selamat ulang tahun, Raihana Marsila 💗</strong><br>
+      Maju terus ya, jangan takut gagal, lawan semuanya. Nanti kita sama sama ke sana.
+    </p>
+
+    <p><strong>Dari yang paling sayang,</strong><br>Gilmanusidki 💌</p>
+
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </div>
+</div>
+
+  </section>
+
+  <footer class="footer">
+    <p>Terima kasih sudah hadir di kehidupan aku, <strong>Sayangku Cintaku My love</strong> 💗<br>
+    Dari <strong>Gilmanusidki</strong></p>
+  </footer>
+
+  <script>
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "love";
+      heart.textContent = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 7000);
+    }
+    setInterval(createHeart, 400);
+
+    window.addEventListener("DOMContentLoaded", function() {
+      const bgMusic = document.getElementById("bg-music");
+      bgMusic.volume = 0.5;
+      const playAudio = () => {
+        bgMusic.play().catch(() => {});
+        document.body.removeEventListener('click', playAudio);
+      };
+      document.body.addEventListener('click', playAudio);
+    });
+  </script>
+</body>
+</html>

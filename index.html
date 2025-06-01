@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Selamat Ulang Tahun Raihana Marsila</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      width: 100%;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom right, #ffdde1, #ee9ca7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.97);
+      border-radius: 24px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      max-width: 420px;
+      width: 100%;
+      padding: 32px 24px;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 1.5s ease forwards;
+    }
+
+    h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 28px;
+      color: #a33858;
+      margin-bottom: 20px;
+      animation: fadeIn 2s ease forwards;
+    }
+
+    .message {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 1.8;
+      color: #444;
+      margin-bottom: 30px;
+      animation: fadeIn 2.5s ease forwards;
+    }
+
+    .message strong {
+      color: #a33858;
+    }
+
+    .btn-start {
+      display: inline-block;
+      padding: 12px 28px;
+      font-size: 16px;
+      font-weight: 600;
+      background-color: #a33858;
+      color: white;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      animation: fadeIn 3s ease forwards;
+    }
+
+    .btn-start:hover {
+      background-color: #892947;
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .love {
+      position: absolute;
+      font-size: 24px;
+      animation: fall linear infinite;
+      user-select: none;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-10vh) rotate(0deg);
+        opacity: 0;
+      }
+      20% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        padding: 28px 20px;
+      }
+
+      .message {
+        font-size: 15px;
+        line-height: 1.6;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+
+      .btn-start {
+        font-size: 15px;
+        padding: 10px 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Musik Background -->
+  <audio id="bg-music" autoplay loop>
+    <source src="HAPPY BIRTHDAY INSTRUMENTAL-yt.savetube.me.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Animasi Love -->
+  <script>
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "love";
+      heart.textContent = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (Math.random() * 3 + 2) + "s";
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 7000);
+    }
+    setInterval(createHeart, 400);
+
+    window.addEventListener("DOMContentLoaded", function() {
+      const bgMusic = document.getElementById("bg-music");
+      bgMusic.volume = 0.5;
+      const playAudio = () => {
+        bgMusic.play().catch(() => {});
+        document.body.removeEventListener('click', playAudio);
+      };
+      document.body.addEventListener('click', playAudio);
+    });
+  </script>
+
+  <!-- Kartu Ucapan -->
+  <div class="card">
+    <h1>Selamat Ulang Tahun<br>Raihana Marsila</h1>
+    <div class="message">
+      <strong>Ya Allah</strong>, panjangkan umur Raihana, limpahkan kesehatan, rezeki, dan kebahagiaan di setiap langkah hidupnya. <br><br>
+      Terima kasih telah hadir sebagai cahaya dalam hidupku. <strong>Doaku</strong> untukmu selalu baik untuk kamu, semoga hari harimu dipenuhi cinta, tawa, dan keberkahan. <br><br>
+      Tetaplah menjadi sosok yang lembut, kuat, dan penuh kasih. Aku <strong>bangga</strong> dan <strong>bersyukur</strong> memilikimu. 💖
+    </div>
+    <a href="index2.html" target="_blank" class="btn-start">Lanjut Klik di Sini!</a>
+  </div>
+
+</body>
+</html>

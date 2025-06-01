@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Profil Raihana</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/4f3ce16e3e.js" crossorigin="anonymous"></script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to top right, #ffdde1, #ee9ca7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 20px;
+      color: #c4446b;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      max-width: 380px;
+      width: 100%;
+      animation: fadeUp 1.2s ease both;
+    }
+
+    .card-top .cover {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      text-align: center;
+      padding: 30px 24px;
+      position: relative;
+      animation: fadeIn 1.5s ease forwards;
+    }
+
+    .avatar {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #fff;
+      position: absolute;
+      top: -45px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #fff;
+      animation: bounce 2s infinite;
+    }
+
+    .card-content h2 {
+      margin-top: 60px;
+      font-size: 22px;
+      color: #c4446b;
+      font-weight: 700;
+    }
+
+    .card-content p {
+      font-size: 15px;
+      font-weight: 500;
+      color: #963b5e;
+      margin: 12px 0 20px;
+    }
+
+    .btn-group {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-weight: 700;
+      font-size: 14px;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .btn-outline {
+      border: 2px solid #c4446b;
+      background: white;
+      color: #c4446b;
+    }
+
+    .btn-outline:hover {
+      background: #c4446b;
+      color: white;
+    }
+
+    .btn-filled {
+      background: #c4446b;
+      color: white;
+      border: 2px solid transparent;
+    }
+
+    .btn-filled:hover {
+      background: #a33858;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: space-between;
+      text-align: center;
+      border-top: 1px solid #f6c6d6;
+      border-bottom: 1px solid #f6c6d6;
+      padding: 12px 0;
+      margin-bottom: 16px;
+    }
+
+    .stats div {
+      flex: 1;
+    }
+
+    .stats strong {
+      font-size: 16px;
+      font-weight: 700;
+      color: #c4446b;
+    }
+
+    .stats span {
+      display: block;
+      font-size: 13px;
+      color: #b76985;
+      margin-top: 4px;
+    }
+
+    .see-more {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 12px 24px;
+      background: #c4446b;
+      color: #fff;
+      border-radius: 25px;
+      font-weight: 700;
+      font-size: 15px;
+      text-decoration: none;
+      transition: 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .see-more:hover {
+      background: #a33858;
+      color: #fff;
+    }
+
+    /* Love Drop Animation */
+    .love {
+      position: absolute;
+      font-size: 22px;
+      animation: fall linear infinite;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-10vh) rotate(0deg);
+        opacity: 0;
+      }
+      20% { opacity: 1; }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes fadeUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: scale(0.95); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(-8px); }
+    }
+
+    @media (max-width: 480px) {
+      .card-content {
+        padding: 24px 16px;
+      }
+
+      .card-content h2 {
+        font-size: 20px;
+      }
+
+      .card-content p {
+        font-size: 14px;
+      }
+
+      .btn {
+        font-size: 13px;
+        padding: 8px 16px;
+      }
+
+      .see-more {
+        font-size: 13px;
+        padding: 8px 16px;
+      }
+
+      .stats strong {
+        font-size: 14px;
+      }
+
+      .stats span {
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <audio id="bg-music" autoplay loop>
+  <source src="HAPPY BIRTHDAY INSTRUMENTAL-yt.savetube.me.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+  <!-- Animasi Love Jatuh -->
+  <script>
+    function createLove() {
+      const love = document.createElement("div");
+      love.className = "love";
+      love.textContent = "❤️"; // Heart emoji
+      love.style.left = Math.random() * 100 + "vw";
+      love.style.animationDuration = (Math.random() * 3 + 2) + "s";
+      document.body.appendChild(love);
+      setTimeout(() => love.remove(), 7000);
+    }
+    setInterval(createLove, 500);
+
+    window.addEventListener("DOMContentLoaded", function() {
+    const bgMusic = document.getElementById("bg-music");
+    // Supaya bisa autoplay tanpa user interaksi
+    bgMusic.volume = 0.5; // Optional: biar nggak terlalu keras
+    const playAudio = () => {
+      bgMusic.play().catch(() => {});
+      document.body.removeEventListener('click', playAudio);
+    };
+    document.body.addEventListener('click', playAudio);
+  });
+  </script>
+
+  <main class="card">
+    <div class="card-top">
+      <img src="img/TopRaihana.png" alt="Top Cover Raihana" class="cover" />
+    </div>
+
+    <div class="card-content">
+      <img src="img/Fotoraihana.png" alt="Raihana" class="avatar" />
+      <h2>Hari Ini Ulang Tahun!! 🎉</h2>
+      <p>Ucapin ulang tahun lewat tombol di bawah ini ya!</p>
+
+      <div class="btn-group">
+        <a href="https://wa.me/62895401301284" target="_blank" class="btn btn-outline">Kirim Pesan</a>
+        <a href="https://instagram.com/raihnaasila_" target="_blank" class="btn btn-filled">Follow Instagram</a>
+      </div>
+
+      <div class="stats">
+        <div><strong>563</strong><span>Followers</span></div>
+        <div><strong>427</strong><span>Following</span></div>
+        <div><strong>0</strong><span>Posts</span></div>
+      </div>
+
+      <a href="profil-lanjutan.html" target="_blank" class="see-more">Klik Di Sini Buat Tau Siapa Itu Raihana Marsila?!</a>
+    </div>
+  </main>
+</body>
+</html>
